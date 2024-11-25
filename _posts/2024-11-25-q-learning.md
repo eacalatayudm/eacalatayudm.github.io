@@ -17,7 +17,7 @@ The simulated demand data includes both a seasonal component and a random compon
 
 The demand graph below illustrates the interplay of seasonal and random fluctuations:
 
-![Demand Series Graph](images/demand_seasonality_graph.png "Demand Series Graph")
+![Demand Series Graph](https://github.com/eacalatayudm/eacalatayudm.github.io/blob/main/_posts/images/demand_seasonality_graph.png "Demand Series Graph")
 
 ### 3. The (s,S) Policy
 The (s,S) policy is a widely used inventory control strategy, where restocking occurs whenever the inventory level falls below a lower threshold, s. When restocked, the stock is replenished up to an upper threshold, S.
@@ -28,7 +28,7 @@ However, this rigidity can become a limitation in dynamic contexts, where rapid 
 
 The graph below illustrates the stock levels over time under the (s,S) policy:
 
-![(s,S) Example Graph](images/s_S_example.png "(s,S) Example Graph")
+![(s,S) Example Graph](https://github.com/eacalatayudm/eacalatayudm.github.io/blob/main/_posts/images/s_S_example.png "(s,S) Example Graph")
 
 The system triggers replenishment when inventory dips below the threshold s, restoring it to S at the start of the next period of time. This structured approach minimizes costs associated with stockouts and overstocking but may struggle to adjust dynamically to unforeseen demand patterns.
 
@@ -38,7 +38,7 @@ Q-Learning, a reinforcement learning algorithm, dynamically learns the optimal a
 #### Training Convergence
 The Q-Learning model was trained for 80,000 episodes. The graph below illustrates the evolution of rewards during training:
 
-![Q-Learning Convergence](images/q_learning_convergence.png "Q-Learning Convergence")
+![Q-Learning Convergence](https://github.com/eacalatayudm/eacalatayudm.github.io/blob/main/_posts/images/q_learning_convergence.png "Q-Learning Convergence")
 
 Over time, the algorithm learns to make decisions that consistently improve rewards, as seen by the upward trend.
 
@@ -52,7 +52,7 @@ After training the Q-Learning model, we tested it alongside the (s,S) policy and
 ### 6. Reward Comparison
 The graph below compares the rewards achieved by each policy:
 
-![Reward Comparison](images/comparison.png "Reward Comparison")
+![Reward Comparison](https://github.com/eacalatayudm/eacalatayudm.github.io/blob/main/_posts/images/comparison.png "Reward Comparison")
 
 - Q-Learning (Green) outperforms other approaches with a mean reward of -260.41, showcasing its ability to dynamically adjust to demand.
 - The (s,S) Policy (Blue) achieves a mean reward of -308.23, reflecting its reliability in structured inventory control.
@@ -76,8 +76,9 @@ import random
 from random import normalvariate
 import math as math
 from stockpyl.finite_horizon import finite_horizon_dp
+```
 
-
+```python
 # 1. Parameters
 T = 24
 p = 3
@@ -95,8 +96,9 @@ actions = [i for i in range(9)]
 states = [i for i in range(24)]
 state_action_space = [(state, action) for state in states for action in actions]
 Q = {id: 0 for id in state_action_space}
+```
 
-
+```python
 # 2. Functions
 # Cost function
 def cost_function(r):
@@ -115,8 +117,9 @@ def epsilon_greedy(Q, state):
         return random.choice(actions)
     else:
         return np.argmax([Q[state, i] for i in actions])
+```
 
-
+```python
 # 3. Demand Graph
 demand = [dgp_demand(i) for i in range(T)]
 plt.figure(figsize=(10, 6))
@@ -130,8 +133,9 @@ plt.grid(True)
 plt.legend()
 plt.savefig("demand_seasonality_graph.png", dpi=500)
 plt.show()
+```
 
-
+```python
 # 4. Random Policy Generation
 def random_policy(stock, period):
     """Selects an action at random"""
@@ -176,8 +180,9 @@ def example_random_policy():
     print_episode_details(taken_actions, demands, final_stocks, rewards)
 # Call the function to show the exemplary episode with random policy
 example_random_policy()
+```
 
-
+```python
 # 5. Q-Learning Policy Training
 # Store rewards during training
 episode_rewards = []
@@ -235,8 +240,9 @@ plt.grid(True)
 plt.ylim([min(episode_rewards) - 10, max(episode_rewards) + 10])
 plt.savefig("q_learning_convergence.png", dpi=500)  # Save the graph as a PNG file
 plt.show()
+```
 
-
+```python
 # 6. Generation of (s,S) Policy
 # Simulate demand to calculate mean and standard deviation
 n_years = 1000000
@@ -342,8 +348,9 @@ plt.legend()
 plt.grid(True)
 plt.savefig("s_S_example.png", dpi=500)
 plt.show()
+```
 
-
+```python
 # 7. Testing Policies: Q-Learning, (s,S), and Random
 # Generate common demand sequence
 test_demand = []
@@ -435,8 +442,9 @@ for episode in range(num_test_episodes):
             done = True
 
     random_rewards_test.append(sum(period_rewards_test))
+```
 
-
+```python
 # 8. Comparison of Results
 average_q_reward = np.mean(q_learning_rewards_test)
 average_sS_reward = np.mean(sS_rewards_test)
