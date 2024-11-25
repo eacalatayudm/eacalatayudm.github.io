@@ -27,7 +27,7 @@ kramdown:
     disable: true
     
 plugins:
-  - jekyll-feed
+  #- jekyll-feed
   - jekyll-sitemap
 
 titles_from_headings:
