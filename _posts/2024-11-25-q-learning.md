@@ -13,7 +13,7 @@ The objective of this analysis is to evaluate:
 ### 2. Demand Patterns
 The simulated demand data includes both a seasonal component and a random component. The seasonal component captures predictable fluctuations such as holidays or production cycles, while the random component accounts for unexpected demand shocks, reflecting real-world uncertainties.
 
-![Demand Data Generating Process](images/demanddgp.png "Demand Data Generating Process")
+![Demand Data Generating Process](https://github.com/eacalatayudm/eacalatayudm.github.io/blob/main/_posts/images/demanddgp.png?raw=true "Demand Data Generating Process")
 
 The demand graph below illustrates the interplay of seasonal and random fluctuations:
 
