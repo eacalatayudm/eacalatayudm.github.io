@@ -1,2 +1,2 @@
 ## This is my first blog post
-$1+1=2$
+$$1+1=2$$
