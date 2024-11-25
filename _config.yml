@@ -18,7 +18,7 @@ email: "example@mail.com"
 #########################################################################################
 ######### Nothing below needs to be changed (unless you know what you're doing) #########
 #########################################################################################
-theme: "cayman"
+theme: "minima"
 
 kramdown:
   syntax_highlighter_opts:
