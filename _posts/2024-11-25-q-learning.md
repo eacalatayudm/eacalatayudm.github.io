@@ -17,7 +17,7 @@ The simulated demand data includes both a seasonal component and a random compon
 
 The demand graph below illustrates the interplay of seasonal and random fluctuations:
 
-![Demand Series Graph](https://github.com/eacalatayudm/eacalatayudm.github.io/blob/main/_posts/images/demand_seasonality_graph.png "Demand Series Graph")
+![Demand Series Graph](https://github.com/eacalatayudm/eacalatayudm.github.io/blob/main/_posts/images/demand_seasonality_graph.png?raw=true "Demand Series Graph")
 
 ### 3. The (s,S) Policy
 The (s,S) policy is a widely used inventory control strategy, where restocking occurs whenever the inventory level falls below a lower threshold, s. When restocked, the stock is replenished up to an upper threshold, S.
@@ -28,7 +28,7 @@ However, this rigidity can become a limitation in dynamic contexts, where rapid 
 
 The graph below illustrates the stock levels over time under the (s,S) policy:
 
-![(s,S) Example Graph](https://github.com/eacalatayudm/eacalatayudm.github.io/blob/main/_posts/images/s_S_example.png "(s,S) Example Graph")
+![(s,S) Example Graph](https://github.com/eacalatayudm/eacalatayudm.github.io/blob/main/_posts/images/s_S_example.png?raw=true "(s,S) Example Graph")
 
 The system triggers replenishment when inventory dips below the threshold s, restoring it to S at the start of the next period of time. This structured approach minimizes costs associated with stockouts and overstocking but may struggle to adjust dynamically to unforeseen demand patterns.
 
@@ -38,7 +38,7 @@ Q-Learning, a reinforcement learning algorithm, dynamically learns the optimal a
 #### Training Convergence
 The Q-Learning model was trained for 80,000 episodes. The graph below illustrates the evolution of rewards during training:
 
-![Q-Learning Convergence](https://github.com/eacalatayudm/eacalatayudm.github.io/blob/main/_posts/images/q_learning_convergence.png "Q-Learning Convergence")
+![Q-Learning Convergence](https://github.com/eacalatayudm/eacalatayudm.github.io/blob/main/_posts/images/q_learning_convergence.png?raw=true "Q-Learning Convergence")
 
 Over time, the algorithm learns to make decisions that consistently improve rewards, as seen by the upward trend.
 
@@ -52,7 +52,7 @@ After training the Q-Learning model, we tested it alongside the (s,S) policy and
 ### 6. Reward Comparison
 The graph below compares the rewards achieved by each policy:
 
-![Reward Comparison](https://github.com/eacalatayudm/eacalatayudm.github.io/blob/main/_posts/images/comparison.png "Reward Comparison")
+![Reward Comparison](https://github.com/eacalatayudm/eacalatayudm.github.io/blob/main/_posts/images/comparison.png?raw=true "Reward Comparison")
 
 - Q-Learning (Green) outperforms other approaches with a mean reward of -260.41, showcasing its ability to dynamically adjust to demand.
 - The (s,S) Policy (Blue) achieves a mean reward of -308.23, reflecting its reliability in structured inventory control.
