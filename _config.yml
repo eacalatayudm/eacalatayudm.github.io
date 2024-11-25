@@ -24,9 +24,7 @@ rss: rss
 
 kramdown:
   syntax_highlighter_opts:
-    disable: false
-
-highlighter: rouge
+    disable: true
 
 plugins:
   - jekyll-feed
